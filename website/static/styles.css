@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f1f2f6;
+  }
+  
+  header {
+    background: #58cc02;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  nav a {
+    color: white;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .dashboard {
+    padding: 2rem;
+  }
+  
+  .progress-path {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+  
+  .lesson {
+    background: white;
+    padding: 1rem;
+    border-radius: 20px;
+    min-width: 150px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  
+  .lesson:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  
+  .lesson.locked {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  
+  .lesson h3 {
+    margin: 0.5rem 0;
+  }
+  
+  .ai-feedback {
+    margin-top: 2rem;
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ai-feedback h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .quiz-btn {
+    background: #573ebb;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .quiz-btn:hover {
+    background: #202b93;
+  }
+  

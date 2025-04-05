@@ -3,18 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>pandAI - Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='cake.png') }}" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Welcome to PandAi</h1>
-        </header>
-        <main>
-            <p>This is a simple home page.</p>
-        </main>
-    </div>
-</body>
-</html>
+    
+      <header>
+        <h1>Welcome to PandAi</h1>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">Progress</a>
+          <a href="#">Settings</a>
+        </nav>
+      </header>
+    
+      <div class="dashboard">
+        <h2>Welcome back, Student!</h2>
+        <div class="progress-path">
+          <div class="lesson">
+            <h3>Intro</h3>
+            <p>✓ Completed</p>
+          </div>
+          <div class="lesson">
+            <h3>Basics</h3>
+            <p>✓ Completed</p>
+          </div>
+          <div class="lesson">
+            <h3>Quiz 1</h3>
+            <button class="quiz-btn">Take Quiz</button>
+          </div>
+          <div class="lesson locked">
+            <h3>Advanced</h3>
+            <p>Locked</p>
+          </div>
+        </div>
+    
+        <div class="ai-feedback">
+          <h2>AI Insights</h2>
+          <p>You're doing great! Based on your quiz results, we suggest focusing more on "Data Analysis Basics".</p>
+          <button class="quiz-btn">Review Topics</button>
+        </div>
+      </div>
+    
+    </body>
+    </html>
+     
+
+    
