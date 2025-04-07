@@ -1,87 +1,121 @@
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #f1f2f6;
-  }
-  
-  header {
-    background: #58cc02;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  header h1 {
-    margin: 0;
-  }
-  
-  nav a {
-    color: white;
-    margin-left: 1rem;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .dashboard {
-    padding: 2rem;
-  }
-  
-  .progress-path {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    padding-bottom: 1rem;
-  }
-  
-  .lesson {
-    background: white;
-    padding: 1rem;
-    border-radius: 20px;
-    min-width: 150px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-  }
-  
-  .lesson:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-  }
-  
-  .lesson.locked {
-    opacity: 0.4;
-    pointer-events: none;
-  }
-  
-  .lesson h3 {
-    margin: 0.5rem 0;
-  }
-  
-  .ai-feedback {
-    margin-top: 2rem;
-    background: #fff;
-    padding: 1rem 1.5rem;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .ai-feedback h2 {
-    margin-bottom: 1rem;
-  }
-  
-  .quiz-btn {
-    background: #573ebb;
-    color: white;
-    border: none;
-    padding: 0.7rem 1.2rem;
-    border-radius: 10px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .quiz-btn:hover {
-    background: #202b93;
-  }
-  
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7fbfd;
+  color: #333;
+}
+
+header {
+  background: #3b82f6;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.greeting h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.greeting p {
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+.info-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  flex: 1 1 280px;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #2563eb;
+}
+
+.card ul {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.card ul li a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.card ul li a:hover {
+  text-decoration: underline;
+}
+
+.progress-path {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.lesson {
+  background: #e0f2fe;
+  padding: 1rem;
+  border-radius: 10px;
+  flex: 1 1 160px;
+  text-align: center;
+}
+
+.lesson.locked {
+  background: #f0f0f0;
+  color: #999;
+}
+
+.quiz-btn {
+  margin-top: 0.5rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.quiz-btn:hover {
+  background: #2563eb;
+}
+
+.ai-feedback {
+  margin-top: 2rem;
+  background: #e0f7ec;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 5px solid #10b981;
+}
+
+.ai-feedback h3 {
+  margin-top: 0;
+}
