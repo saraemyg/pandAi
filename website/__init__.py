@@ -1,8 +1,20 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, jsonify
+from google import genai
+import os
+from dotenv import load_dotenv
 
 def create_app():
+    load_dotenv() 
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'saranadianisa'
+
+    # # Configure Gemini AI
+    # GOOGLE_API_KEY = os.getenv('AIzaSyAgmrGP_X5q0jGiXsndQ0bO-D4lSXxSwQw')
+    # if not GOOGLE_API_KEY:
+    #     raise ValueError("No GOOGLE_API_KEY found in environment variables")
+    
+    # Initialize Gemini client
+    client = genai.Client(api_key='AIzaSyAgmrGP_X5q0jGiXsndQ0bO-D4lSXxSwQw')
 
     @app.route('/')
     def home():
@@ -35,7 +47,33 @@ def create_app():
 
     @app.route('/review')
     def review():
-        return "<h2>Review topics page coming soon...</h2>"
+        return render_template('review.html')
 
-        
+    @app.route('/get_ai_response', methods=['POST'])
+    def get_ai_response():
+        data = request.json
+        user_message = data.get('message')
+
+        try:
+            # Add context to the AI prompt
+            prompt = f"""You are an educational AI assistant helping a student learn.
+            Context: The student is asking about: {user_message}
+            Instructions: Provide a clear, educational response that is helpful and concise.
+            Keep the tone friendly and encouraging."""
+
+            # Generate response using Gemini AI
+            response = client.models.generate_content(
+                model="gemini-2.0-flash",
+                contents=prompt
+            )
+            
+            if response.text:
+                return jsonify({'response': response.text})
+            else:
+                return jsonify({'response': 'I apologize, but I could not generate a response. Please try rephrasing your question.'}), 400
+
+        except Exception as e:
+            print(f"Error: {str(e)}")  # For debugging
+            return jsonify({'response': 'An error occurred while processing your request. Please try again.'}), 500
+
     return app
